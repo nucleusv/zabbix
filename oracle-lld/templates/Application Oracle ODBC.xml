@@ -1,0 +1,2185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>2.0</version>
+    <date>2014-05-24T07:39:09Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Application Oracle ODBC</template>
+            <name>Application Oracle ODBC</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Oracle Jobs</name>
+                </application>
+                <application>
+                    <name>Oracle ODBC</name>
+                </application>
+                <application>
+                    <name>Oracle Performance</name>
+                </application>
+                <application>
+                    <name>Oracle Tablespaces</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Oracle Buffer busy waits</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[bufbusywaits,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select &#13;
+   to_char(time_waited, 'FM99999999999999990') retvalue&#13;
+from &#13;
+  v$system_event se, &#13;
+  v$event_name en&#13;
+where &#13;
+   se.event(+) = en.name and en.name = 'buffer busy waits';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Bytes received via SQL*Net from client</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[netresv,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(value, 'FM99999999999999990') retvalue from v$sysstat where name = 'bytes received via SQL*Net from client';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Bytes sent via SQL*Net to client</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select.[netsent,{$DSN1}]</key>
+                    <delay>30</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(value, 'FM99999999999999990') retvalue from v$sysstat where name = 'bytes sent via SQL*Net to client';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Count of active users</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[activeusercount,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(count(*)-1, 'FM99999999999999990') retvalue from v$session where username is not null &#13;
+             and status='ACTIVE';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle DB file parallel write</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[dbprllwrite,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(time_waited, 'FM99999999999999990') retvalue&#13;
+             from v$system_event se, v$event_name en&#13;
+             where se.event(+) = en.name and en.name = 'db file parallel write';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle DB file scattered read</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[dbscattread,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(time_waited, 'FM99999999999999990') retvalue&#13;
+             from v$system_event se, v$event_name en&#13;
+             where se.event(+) = en.name and en.name = 'db file scattered read';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle DB file sequential read waits</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[dbseqread,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(time_waited, 'FM99999999999999990') retvalue&#13;
+             from v$system_event se, v$event_name en&#13;
+             where se.event(+) = en.name and en.name = 'db file sequential read';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle DB file single write</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[dbsnglwrite,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(time_waited, 'FM99999999999999990') retvalue&#13;
+             from v$system_event se, v$event_name en&#13;
+             where se.event(+) = en.name and en.name = 'db file single write';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Deadlocks (delta, simple change)</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[deadlocks,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>2</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(value, 'FM99999999999999990') retvalue from v$sysstat where name = 'enqueue deadlocks';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Direct path read</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[directread,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(time_waited, 'FM99999999999999990') retvalue&#13;
+             from v$system_event se, v$event_name en&#13;
+             where se.event(+) = en.name and en.name = 'direct path read';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Direct path write</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[directwrite,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(time_waited, 'FM99999999999999990') retvalue&#13;
+             from v$system_event se, v$event_name en&#13;
+             where se.event(+) = en.name and en.name = 'direct path write';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Disk sorts ratio</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[dsksortratio,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>%</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>SELECT to_char(d.value/(d.value + m.value)*100, 'FM99999990.9999') retvalue&#13;
+             FROM  v$sysstat m, v$sysstat d&#13;
+             WHERE m.name = 'sorts (memory)'&#13;
+             AND d.name = 'sorts (disk)';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Hard parse ratio</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[hparsratio,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>%</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>SELECT to_char(h.value/t.value*100,'FM99999990.9999') retvalue&#13;
+             FROM  v$sysstat h, v$sysstat t&#13;
+             WHERE h.name = 'parse count (hard)'&#13;
+             AND t.name = 'parse count (total)';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Index fast full scans (full) (delta)</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[indexffs,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>2</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(value, 'FM99999999999999990') retvalue from v$sysstat where name = 'index fast full scans (full)';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Intance is active and open</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[checkactive,{$DSN1}]</key>
+                    <delay>300</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(case when inst_cnt &gt; 0 then 1 else 0 end,'FM99999999999999990') retvalue&#13;
+             from (select count(*) inst_cnt from v$instance &#13;
+                   where status = 'OPEN' and logins = 'ALLOWED' and database_status = 'ACTIVE');</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Last applied archive log (at standby)</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[lastapplarclog,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(max(lh.SEQUENCE#), 'FM99999999999999990') retvalue&#13;
+             from v$loghist lh, v$archived_log al&#13;
+             where lh.SEQUENCE# = al.SEQUENCE# and applied='YES';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Last archived log sequence</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[lastarclog,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(max(SEQUENCE#), 'FM99999999999999990') retvalue from v$log where archived = 'YES';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Latch free</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[latchfree,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(time_waited, 'FM99999999999999990') retvalue&#13;
+             from v$system_event se, v$event_name en&#13;
+             where se.event(+) = en.name and en.name = 'latch free';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Live DB</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[live,{$DSN1}]</key>
+                    <delay>60</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(1, 'FM99999999999999990') retvalue from dual;</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Log file parallel write</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[logprllwrite,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(time_waited, 'FM99999999999999990') retvalue&#13;
+             from v$system_event se, v$event_name en&#13;
+             where se.event(+) = en.name and en.name = 'log file parallel write';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Log file switch completion</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[logswcompletion,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(time_waited, 'FM99999999999999990') retvalue&#13;
+             from v$system_event se, v$event_name en&#13;
+             where se.event(+) = en.name and en.name = 'log file switch completion';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Log file sync</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[logfilesync,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(time_waited, 'FM99999999999999990') retvalue&#13;
+             from v$system_event se, v$event_name en&#13;
+             where se.event(+) = en.name and en.name = 'log file sync';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Logons current</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[logonscurrent,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(value, 'FM99999999999999990') retvalue from v$sysstat where name = 'logons current';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Read Cache hit ratio</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[rcachehit,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>%</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>SELECT to_char((1 - (phy.value - lob.value - dir.value) / ses.value) * 100, 'FM99999990.9999') retvalue&#13;
+            FROM   v$sysstat ses, v$sysstat lob,&#13;
+                   v$sysstat dir, v$sysstat phy&#13;
+            WHERE  ses.name = 'session logical reads'&#13;
+            AND    dir.name = 'physical reads direct'&#13;
+            AND    lob.name = 'physical reads direct (lob)'&#13;
+            AND    phy.name = 'physical reads';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Redo Writes (delta)</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[redowrites,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>2</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(value, 'FM99999999999999990') retvalue from v$sysstat where name = 'redo writes';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Size of all datafiles</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[dbfilesize,{$DSN1}]</key>
+                    <delay>7200</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(sum(bytes), 'FM99999999999999990') retvalue from dba_data_files;</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Size of user data (without temp)</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[dbsize,{$DSN1}]</key>
+                    <delay>1800</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>SELECT to_char(sum(  NVL(a.bytes - NVL(f.bytes, 0), 0)), 'FM99999999999999990') retvalue&#13;
+             FROM sys.dba_tablespaces d,&#13;
+             (select tablespace_name, sum(bytes) bytes from dba_data_files group by tablespace_name) a,&#13;
+             (select tablespace_name, sum(bytes) bytes from dba_free_space group by tablespace_name) f&#13;
+             WHERE d.tablespace_name = a.tablespace_name(+) AND d.tablespace_name = f.tablespace_name(+)&#13;
+             AND NOT (d.extent_management like 'LOCAL' AND d.contents like 'TEMPORARY');</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle SQL*Net roundtrips to/from client</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[netroundtrips,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(value, 'FM99999999999999990') retvalue from v$sysstat where name = 'SQL*Net roundtrips to/from client';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Table scan rows gotten (delta)</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[tblrowsscans,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>2</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(value, 'FM99999999999999990') retvalue from v$sysstat where name = 'table scan rows gotten';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Table scans (long tables) (delta)</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[tblscans,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>2</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(value, 'FM99999999999999990') retvalue from v$sysstat where name = 'table scans (long tables)';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Uptime</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[uptime,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>s</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char((sysdate-startup_time)*86400, 'FM99999999999999990') retvalue from v$instance;</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle User Commits</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[commits,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>2</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(value, 'FM99999999999999990') retvalue from v$sysstat where name = 'user commits';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Usercount</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[usercount,{$DSN1}]</key>
+                    <delay>300</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(count(*)-1, 'FM99999999999999990') retvalue from v$session where username is not null;</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle User Rollbacks (delta)</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[rollbacks,{$DSN1}]</key>
+                    <delay>600</delay>
+                    <history>30</history>
+                    <trends>730</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>2</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select to_char(value, 'FM99999999999999990') retvalue from v$sysstat where name = 'user rollbacks';</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle Version</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[version,{$DSN1}]</key>
+                    <delay>86400</delay>
+                    <history>5</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>1</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>select banner from v$version where rownum=1;</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username>{$ORA_USER}</username>
+                    <password>{$ORA_PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>16</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle Performance</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+            </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>Oracle Jobs</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>oracle.odbc.discovery[{$DSN1},jobs]</key>
+                    <delay>86400</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>{#JOBOWNER}:@Oracle System Job Owners</filter>
+                    <lifetime>30</lifetime>
+                    <description>Обнаружение всех jobs в БД Oracle</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Время выполнения JOB'a {#JOBOWNER}.{#JOBNAME}</name>
+                            <type>11</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>db.odbc.select[job_runtime_{#JOBOWNER}.{#JOBNAME},{$DSN1}]</key>
+                            <delay>300</delay>
+                            <history>30</history>
+                            <trends>720</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>мин</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params>SELECT nvl(max(work_minutes),0) &#13;
+FROM (SELECT owner,&#13;
+                     job_name,&#13;
+                     EXTRACT (HOUR FROM elapsed_time) * 60&#13;
+                    + EXTRACT (MINUTE FROM elapsed_time)&#13;
+                    AS work_minutes&#13;
+          FROM &#13;
+                    dba_scheduler_running_jobs&#13;
+          WHERE &#13;
+                   owner = '{#JOBOWNER}' &#13;
+                   AND &#13;
+                   job_name = '{#JOBNAME}')</params>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username>{$ORA_USER}</username>
+                            <password>{$ORA_PASSWORD}</password>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Время работы джоба, если не запущен то вернет 0</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Oracle Jobs</name>
+                                </application>
+                                <application>
+                                    <name>Oracle ODBC</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Статус выполнения JOB'а {#JOBOWNER}.{#JOBNAME}</name>
+                            <type>11</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>db.odbc.select[job_status_{#JOBOWNER}.{#JOBNAME},{$DSN1}]</key>
+                            <delay>300</delay>
+                            <history>30</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params>SELECT &#13;
+     status&#13;
+FROM &#13;
+         dba_scheduler_job_run_details&#13;
+WHERE &#13;
+          log_date =&#13;
+           (SELECT MAX (log_date)&#13;
+            FROM dba_scheduler_job_run_details&#13;
+            WHERE &#13;
+               owner = '{#JOBOWNER}'&#13;
+            AND &#13;
+               job_name = '{#JOBNAME}')</params>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username>{$ORA_USER}</username>
+                            <password>{$ORA_PASSWORD}</password>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Статус выполнения джоба {#JOBNAME}</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Oracle Jobs</name>
+                                </application>
+                                <application>
+                                    <name>Oracle ODBC</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Application Oracle ODBC:db.odbc.select[job_runtime_{#JOBOWNER}.{#JOBNAME},{$DSN1}].last()}&gt;720</expression>
+                            <name>Время выполнения job'а {#JOBNAME} более 720 мин</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Application Oracle ODBC:db.odbc.select[job_status_{#JOBOWNER}.{#JOBNAME},{$DSN1}].str(&quot;SUCCEEDED&quot;)}#1</expression>
+                            <name>Ошибка выполнения job'а {#JOBNAME}</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Oracle Tablespaces</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>oracle.odbc.discovery[{$DSN1},tablespaces]</key>
+                    <delay>86400</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>{#TBSNAME}:@Oracle System Excluded Tablespaces</filter>
+                    <lifetime>30</lifetime>
+                    <description>Обнаружение всех tablespaces в БД Oracle</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Использовано места в процентах в tablespace {#TBSNAME}</name>
+                            <type>11</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>db.odbc.select[tbs_used_percent_{#TBSNAME},{$DSN1}]</key>
+                            <delay>1800</delay>
+                            <history>30</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>%</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params>select decode(100 - ceil(b.bytes_free/a.bytes_alloc*100), NULL, 100,100&#13;
+- ceil(b.bytes_free/a.bytes_alloc*100)) &quot;% used&quot;&#13;
+        from  ( select  f.tablespace_name,&#13;
+                sum(f.bytes) bytes_alloc,&#13;
+                sum(decode(f.autoextensible, 'YES',f.maxbytes,'NO',&#13;
+f.bytes)) maxbytes&#13;
+         from dba_data_files f&#13;
+         group by tablespace_name) a,&#13;
+       ( select  f.tablespace_name,&#13;
+                sum(f.bytes)  bytes_free&#13;
+         from dba_free_space f&#13;
+         group by tablespace_name) b&#13;
+where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</params>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username>{$ORA_USER}</username>
+                            <password>{$ORA_PASSWORD}</password>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Использовано % в tablespace</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Oracle ODBC</name>
+                                </application>
+                                <application>
+                                    <name>Oracle Tablespaces</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Максимально возможный размер tablespace {#TBSNAME}</name>
+                            <type>11</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>db.odbc.select[tbs_maxsize_{#TBSNAME},{$DSN1}]</key>
+                            <delay>1800</delay>
+                            <history>30</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>B</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params>select  round(maxbytes) Max&#13;
+from  ( select  f.tablespace_name,&#13;
+                sum(f.bytes) bytes_alloc,&#13;
+                sum(decode(f.autoextensible, 'YES',f.maxbytes,'NO',&#13;
+f.bytes)) maxbytes&#13;
+         from dba_data_files f&#13;
+         group by tablespace_name) a,&#13;
+       ( select  f.tablespace_name,&#13;
+                sum(f.bytes)  bytes_free&#13;
+         from dba_free_space f&#13;
+         group by tablespace_name) b&#13;
+where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</params>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username>{$ORA_USER}</username>
+                            <password>{$ORA_PASSWORD}</password>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Максимально возможный размер tablespace</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Oracle ODBC</name>
+                                </application>
+                                <application>
+                                    <name>Oracle Tablespaces</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Осталось свободного места в байтах в tablespace {#TBSNAME}</name>
+                            <type>11</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>db.odbc.select[tbs_used_{#TBSNAME},{$DSN1}]</key>
+                            <delay>1800</delay>
+                            <history>30</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>B</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params>select a.bytes_alloc&#13;
+        from  ( select  f.tablespace_name,&#13;
+                sum(f.bytes) bytes_alloc,&#13;
+                sum(decode(f.autoextensible, 'YES',f.maxbytes,'NO',&#13;
+f.bytes)) maxbytes&#13;
+         from dba_data_files f&#13;
+         group by tablespace_name) a,&#13;
+       ( select  f.tablespace_name,&#13;
+                sum(f.bytes)  bytes_free&#13;
+         from dba_free_space f&#13;
+         group by tablespace_name) b&#13;
+where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</params>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username>{$ORA_USER}</username>
+                            <password>{$ORA_PASSWORD}</password>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Использовано в байтах в tablespace</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Oracle ODBC</name>
+                                </application>
+                                <application>
+                                    <name>Oracle Tablespaces</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Свободно в tablespace {#TBSNAME}</name>
+                            <type>11</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>db.odbc.select[tbs_freesize_{#TBSNAME},{$DSN1}]</key>
+                            <delay>1800</delay>
+                            <history>30</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>B</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params>select round(b.bytes_free) &quot;free B&quot;&#13;
+from  ( select  f.tablespace_name,&#13;
+                sum(f.bytes) bytes_alloc,&#13;
+                sum(decode(f.autoextensible, 'YES',f.maxbytes,'NO',&#13;
+f.bytes)) maxbytes&#13;
+         from dba_data_files f&#13;
+         group by tablespace_name) a,&#13;
+       ( select  f.tablespace_name,&#13;
+                sum(f.bytes)  bytes_free&#13;
+         from dba_free_space f&#13;
+         group by tablespace_name) b&#13;
+where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</params>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username>{$ORA_USER}</username>
+                            <password>{$ORA_PASSWORD}</password>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Свободно в tablespace</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Oracle ODBC</name>
+                                </application>
+                                <application>
+                                    <name>Oracle Tablespaces</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Текущий размер tablespace {#TBSNAME}</name>
+                            <type>11</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}]</key>
+                            <delay>1800</delay>
+                            <history>30</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>B</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params>select  round(a.bytes_alloc, 0) &quot;size B&quot;&#13;
+        from  ( select  f.tablespace_name,&#13;
+                sum(f.bytes) bytes_alloc,&#13;
+                sum(decode(f.autoextensible, 'YES',f.maxbytes,'NO',&#13;
+f.bytes)) maxbytes&#13;
+         from dba_data_files f&#13;
+         group by tablespace_name) a,&#13;
+       ( select  f.tablespace_name,&#13;
+                sum(f.bytes)  bytes_free&#13;
+         from dba_free_space f&#13;
+         group by tablespace_name) b&#13;
+where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</params>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username>{$ORA_USER}</username>
+                            <password>{$ORA_PASSWORD}</password>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Актуальный размер tablespace</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Oracle ODBC</name>
+                                </application>
+                                <application>
+                                    <name>Oracle Tablespaces</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&lt;3298534883328 &amp; {Application Oracle ODBC:db.odbc.select[tbs_used_percent_{#TBSNAME},{$DSN1}].last()}&gt;97 &amp; {Application Oracle ODBC:db.odbc.select[tbs_maxsize_{#TBSNAME},{$DSN1}].last()}&gt;0</expression>
+                            <name>Свободное пространство в tablespace {#TBSNAME} менее 3%</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description>Если  размер tablespace менее 3 Тб то триггер срабатывает при использованном пространстве более 97%</description>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Application Oracle ODBC:db.odbc.select[tbs_freesize_{#TBSNAME},{$DSN1}].last()}&lt;52613349376 &amp; {Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&gt;3298534883328 &amp; {Application Oracle ODBC:db.odbc.select[tbs_maxsize_{#TBSNAME},{$DSN1}].last()}&gt;0 &amp; {Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&lt;10995116277760</expression>
+                            <name>Свободное пространство в tablespace {#TBSNAME} менее 49 Гб</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description>Если  размер tablespace более 3 Тб, но менее 10 Тб - то триггер срабатывает при оставшемся использованном пространстве менее 49 Гб</description>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Application Oracle ODBC:db.odbc.select[tbs_freesize_{#TBSNAME},{$DSN1}].last()}&lt;106300440576 &amp; {Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&gt;10995116277760 &amp; {Application Oracle ODBC:db.odbc.select[tbs_maxsize_{#TBSNAME},{$DSN1}].last()}&gt;0</expression>
+                            <name>Свободное пространство в tablespace {#TBSNAME} менее 99 Гб</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description>Если  размер tablespace более 10 Тб то триггер срабатывает при оставшемся использованном пространстве менее 99 Гб</description>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Application Oracle ODBC:db.odbc.select[tbs_freesize_{#TBSNAME},{$DSN1}].last()}&lt;106300440576 &amp; {Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&gt;3298534883328 &amp; {Application Oracle ODBC:db.odbc.select[tbs_maxsize_{#TBSNAME},{$DSN1}].last()}&gt;0 &amp; {Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&lt;10995116277760</expression>
+                            <name>Свободное пространство в tablespace {#TBSNAME} менее 99 Гб</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description>Если  размер tablespace более 3 Тб, но менее 10 Тб - то триггер срабатывает при оставшемся использованном пространстве менее 99 Гб</description>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Application Oracle ODBC:db.odbc.select[tbs_freesize_{#TBSNAME},{$DSN1}].last()}&lt;213674622976 &amp; {Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&gt;10995116277760 &amp; {Application Oracle ODBC:db.odbc.select[tbs_maxsize_{#TBSNAME},{$DSN1}].last()}&gt;0</expression>
+                            <name>Свободное пространство в tablespace {#TBSNAME} менее 199 Гб</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description>Если  размер tablespace более 10 Тб то триггер срабатывает при оставшемся использованном пространстве менее 199 Гб</description>
+                            <type>0</type>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>Размер tablespace {#TBSNAME}</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>0.0000</yaxismax>
+                            <show_work_period>0</show_work_period>
+                            <show_triggers>0</show_triggers>
+                            <type>3</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>0</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>00CC00</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>9</calc_fnc>
+                                    <type>2</type>
+                                    <item>
+                                        <host>Application Oracle ODBC</host>
+                                        <key>db.odbc.select[tbs_maxsize_{#TBSNAME},{$DSN1}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>DDDD00</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>9</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Application Oracle ODBC</host>
+                                        <key>db.odbc.select[tbs_freesize_{#TBSNAME},{$DSN1}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>CC0000</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>9</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Application Oracle ODBC</host>
+                                        <key>db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <host_prototypes/>
+                </discovery_rule>
+            </discovery_rules>
+            <macros/>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{Application Oracle ODBC:db.odbc.select[deadlocks,{$DSN1}].last()}&gt;0</expression>
+            <name>DeadLock on server {HOSTNAME}</name>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Application Oracle ODBC:db.odbc.select[live,{$DSN1}].nodata(400)}=1</expression>
+            <name>oracle monitoring, no data</name>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description>тестируем</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Application Oracle ODBC:db.odbc.select[rcachehit,{$DSN1}].last(0)}&lt;90</expression>
+            <name>Read Cache Hit ratio on server {HOSTNAME}</name>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Application Oracle ODBC:db.odbc.select[uptime,{$DSN1}].last()}&lt;600</expression>
+            <name>БД Oracle сервера {HOSTNAME} была перезагружена!</name>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+    </triggers>
+</zabbix_export>
